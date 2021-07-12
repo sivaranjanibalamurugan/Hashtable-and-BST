@@ -69,4 +69,49 @@ class BinarySearchTree<T> where T : IComparable
             display(parent.Right);
         }
     }
+    public int SizeOf(TreeNode<T> parent)
+    {
+        //if the root is null then tree is empty
+        if (parent == null)
+        {
+            return 0;
+        }
+        //else find size of left sub tree and size of right sub tree then add together with one root node
+        else
+        {
+            return (SizeOf(parent.Left) + 1 + SizeOf(parent.Right));
+        }
+    }
+
+    public int SearchTree(T value)
+    {
+        if (root == null)
+        {
+            return 0;
+        }
+        else
+        {
+            TreeNode<T> current = root;
+            while (true)
+            {
+                if (current == null)
+                {
+                    return 0;
+                }
+                if (current.value.CompareTo(value) == 0)
+                {
+                    return 1;
+                }
+                else if (current.value.CompareTo(value) > 0)
+                {
+                    current = current.Left;
+                }
+                else
+                {
+                    current = current.Right;
+                }
+            }
+        }
+    }
 }
+
