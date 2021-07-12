@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace HashTable
 {
   
-        class Hash<K, V>
-        {
+     class Hash<K, V>
+     {
             private readonly int listSize;
             private LinkedList<KeyValue<K, V>>[] item;
             public Hash(int size)
@@ -75,7 +75,7 @@ namespace HashTable
                     return count;
                 }
             }
-        }
+     }
 
         public struct KeyValue<k, v>
         {
